@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>风水方位分析 - 命理罗盘</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- 头部 -->
+        <header>
+            <h1>风水方位分析</h1>
+            <p>八字命理 · 八卦九宫 · 方位吉凶</p>
+        </header>
+
+        <!-- 输入区域 -->
+        <section class="input-section">
+            <h2>输入出生信息</h2>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="calendarType">历法</label>
+                    <select id="calendarType">
+                        <option value="solar">阳历（公历）</option>
+                        <option value="lunar">农历（阴历）</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="year">出生年份</label>
+                    <select id="year"></select>
+                </div>
+                <div class="form-group">
+                    <label for="month">出生月份</label>
+                    <select id="month"></select>
+                </div>
+                <div class="form-group">
+                    <label for="day">出生日期</label>
+                    <select id="day"></select>
+                </div>
+                <div class="form-group">
+                    <label for="hour">出生时辰</label>
+                    <select id="hour"></select>
+                </div>
+                <div class="form-group" id="leapMonthGroup" style="display:none;">
+                    <label for="leapMonth">闰月</label>
+                    <select id="leapMonth">
+                        <option value="">否</option>
+                    </select>
+                </div>
+            </div>
+            <button class="btn-analyze" id="analyzeBtn">开始分析</button>
+        </section>
+
+        <!-- 加载动画 -->
+        <div class="loading">
+            <div class="loading-spinner"></div>
+            <p>正在分析命局...</p>
+        </div>
+
+        <!-- 八字信息展示 -->
+        <section class="bazi-section" id="baziSection">
+            <h2>命局分析</h2>
+            <div class="bazi-grid"></div>
+        </section>
+
+        <!-- 八卦展示 -->
+        <section class="bagua-section" id="baguaSection">
+            <h2>八卦对应</h2>
+            <div class="bagua-grid"></div>
+        </section>
+
+        <!-- 罗盘与方位分析 -->
+        <section class="compass-section" id="compassSection">
+            <div class="compass-container">
+                <h2 style="color:var(--primary);margin-bottom:20px;">命盘罗盘</h2>
+                <div class="compass-wrapper">
+                    <div class="compass" id="compassContainer"></div>
+                </div>
+                <div class="directions-grid"></div>
+            </div>
+        </section>
+
+        <!-- 家居摆放建议 -->
+        <section class="advice-section" id="adviceSection">
+            <h2>家居摆放建议</h2>
+            <div class="advice-grid"></div>
+        </section>
+
+        <!-- 颜色与数字建议 -->
+        <section class="suggestions-section" id="suggestionsSection">
+            <h2>趋吉避凶建议</h2>
+            <div class="suggestions-grid"></div>
+        </section>
+
+        <!-- 页脚 -->
+        <footer>
+            <p>风水方位分析 · 仅供娱乐参考</p>
+            <p style="margin-top:10px;font-size:0.85rem;">命理非命运，尽人事而听天命</p>
+        </footer>
+    </div>
+
+    <script src="bazi.js"></script>
+    <script src="compass.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
